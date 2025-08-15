@@ -33,7 +33,7 @@ async function initDb() {
 app.use(cors({
   origin: [
     'http://localhost:5173',
-    'https://your-vercel-app.vercel.app'  // Replace with your actual Vercel URL
+    'https://scrapup.vercel.app/'  // Replace with your actual Vercel URL
   ],
   credentials: true
 }));
@@ -99,4 +99,5 @@ app.put('/api/requests/:id/status', auth, async (req,res) => {
 });
 
 initDb().then(() => app.listen(PORT, () => console.log(`🚀 API running on port ${PORT}`)));
+
 
