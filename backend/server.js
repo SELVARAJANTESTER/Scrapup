@@ -7,6 +7,9 @@ import { open } from 'sqlite';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`🚀 API running on port ${PORT}`);
+});
 const JWT_SECRET = process.env.JWT_SECRET || 'secret-key-2024';
 
 let db;
@@ -99,5 +102,6 @@ app.put('/api/requests/:id/status', auth, async (req,res) => {
 });
 
 initDb().then(() => app.listen(PORT, () => console.log(`🚀 API running on port ${PORT}`)));
+
 
 
